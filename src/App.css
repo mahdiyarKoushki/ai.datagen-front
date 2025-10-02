@@ -1,0 +1,13 @@
+/* src/fonts.css */
+@font-face {
+  font-family: 'Vazirmatn';
+  src: url('../public/fonts/Vazir-FD-WOL.ttf') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+}
