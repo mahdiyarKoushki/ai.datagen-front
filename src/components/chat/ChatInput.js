@@ -12,7 +12,7 @@ const ChatInput = ({ inputValue, setInputValue, handleSubmit, handleKeyPress, is
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="پیام خود را بنenvisید..."
+              placeholder="پیام خود را بنویسید..."
               className="w-full p-3 pl-12 bg-gray-700 border border-gray-600 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
               rows="1"
               style={{ minHeight: '44px', maxHeight: '120px' }}

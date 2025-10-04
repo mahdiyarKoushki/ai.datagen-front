@@ -283,16 +283,14 @@ const ChatGPTInterface = () => {
     };
     
     setMessages(prev => {
-      const lastMessage = prev[prev.length - 1];
-      if (lastMessage && lastMessage.type === 'user' && lastMessage.content === userMessage) {
-        return [...prev, assistantMessage];
-      }
       const userMessageObject = {
-        id: Date.now() + 1, type: 'user', content: userMessage, timestamp: new Date()
+        id: Date.now(), // Use Date.now() for unique ID
+        type: 'user',
+        content: userMessage,
+        timestamp: new Date()
       };
-      const isNewChat = prev.length === 1 && prev[0].id === 1;
-      const baseMessages = isNewChat ? [userMessageObject] : prev;
-      return [...baseMessages, assistantMessage];
+      // Always add the user message first, then the assistant's streaming message
+      return [...prev, userMessageObject, assistantMessage];
     });
     
     let newThreadId = threadId;
